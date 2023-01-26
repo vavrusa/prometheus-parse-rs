@@ -10,8 +10,12 @@ keywords = ["prometheus", "parser"]
 repository = "https://github.com/ccakes/prometheus-parse-rs"
 homepage = "https://github.com/ccakes/prometheus-parse-rs"
 
+[features]
+default = ["chrono_clock"]
+chrono_clock = ["chrono/clock"]
+
 [dependencies]
-chrono = "^0.4"
+chrono = { version = "^0.4", default-features = false }
 itertools = "^0.10"
 lazy_static = "^1.4"
 regex = "^1.3"

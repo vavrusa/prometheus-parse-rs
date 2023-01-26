@@ -250,6 +250,7 @@ fn parse_golang_float(s: &str) -> Result<f64, <f64 as std::str::FromStr>::Err> {
 }
 
 impl Scrape {
+    #[cfg(feature = "chrono_clock")]
     pub fn parse(lines: impl Iterator<Item = io::Result<String>>) -> io::Result<Scrape> {
         Scrape::parse_at(lines, Utc::now())
     }
